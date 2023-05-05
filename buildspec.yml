@@ -1,10 +1,10 @@
 version: 0.2
 
 env:
-    LOGIN: Prod/Sonar:0b812d8c60d8c3861c7b67f21d104f4da0c8b07b
-    HOST: Prod/Sonar:https://sonarcloud.io
-    Organization: Prod/Sonar:Saddu008
-    Project: Prod/Sonar:AWSDemoProject
+    LOGIN: 0b812d8c60d8c3861c7b67f21d104f4da0c8b07b
+    HOST: https://sonarcloud.io
+    Organization: Saddu008
+    Project: AWSDemoProject
     
 phases:
   install:
