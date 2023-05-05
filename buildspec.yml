@@ -1,5 +1,12 @@
 version: 0.2
 
+env:
+  secrets-manager:
+    LOGIN: Prod/Sonar:SONAR_TOKEN
+    HOST: Prod/Sonar:HOST
+    Organization: Prod/Sonar:Organisation
+    Project: Prod/Sonar:Project
+
 phases:
   install:
     commands:
@@ -9,9 +16,13 @@ phases:
       - echo Build started on `date`
       - echo Compiling the Python code...
       - python test_app.py
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
+      - unzip ./sonar-scanner-cli-3.3.0.1492-linux.zip
+      - export PATH=$PATH:/sonar-scanner-3.3.0.1492-linux/bin/
   post_build:
     commands:
       - echo Build completed on `date`
+      - mvn sonar:sonar -Dsonar.login=$LOGIN -Dsonar.host.url=$HOST -Dsonar.projectKey=$Project -Dsonar.organization=$Organization
 artifacts:
   files:
     - web.py
