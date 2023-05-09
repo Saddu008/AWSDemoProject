@@ -1,9 +1,9 @@
 version: 0.2
 
 env:
-    LOGIN: 0b812d8c60d8c3861c7b67f21d104f4da0c8b07b
+    LOGIN: 61876bc800f2a5ff74acd9b7dc68d6fec3d26f47
     HOST: https://sonarcloud.io
-    Organization: Saddu008
+    Organization: saddam
     Project: AWSDemoProject
     
 phases:
